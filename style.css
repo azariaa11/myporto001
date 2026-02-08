@@ -1,17 +1,15 @@
-/* ===== IMPORT FONT CUTE ===== */
-@import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@400;600;700&display=swap');
-
 /* ===== RESET ===== */
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family: 'Quicksand', sans-serif;
+  font-family: 'Poppins', 'Segoe UI', sans-serif;
 }
 
 body {
-  background: linear-gradient(135deg, #fff0f6, #fffde7);
+  background: linear-gradient(135deg, #fff0f5, #ffffff);
   color: #444;
+  scroll-behavior: smooth;
 }
 
 /* ===== HEADER ===== */
@@ -19,13 +17,15 @@ header {
   position: fixed;
   top: 0;
   width: 100%;
-  background: #fff;
-  padding: 15px 10%;
-  box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+  background: rgba(255,255,255,0.95);
+  box-shadow: 0 5px 15px rgba(0,0,0,0.05);
   z-index: 999;
 }
 
 nav {
+  max-width: 1200px;
+  margin: auto;
+  padding: 15px 30px;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -33,87 +33,132 @@ nav {
 
 .logo {
   font-size: 1.6rem;
-  font-weight: 700;
+  font-weight: bold;
+}
+
+.logo span {
+  color: #ff8fab;
+}
+
+nav ul {
+  display: flex;
+  list-style: none;
+}
+
+nav ul li {
+  margin-left: 25px;
+}
+
+nav ul li a {
+  text-decoration: none;
+  color: #555;
+  font-weight: 500;
+}
+
+nav ul li a:hover {
   color: #ff8fab;
 }
 
 /* ===== HERO ===== */
 .hero {
   min-height: 100vh;
-  padding: 120px 10% 60px;
+  padding: 120px 10%;
   display: flex;
   align-items: center;
   justify-content: space-between;
   gap: 40px;
+
+  /* GAMBAR BACKGROUND LUCU (SANRIO STYLE) */
+  background-image:
+    linear-gradient(rgba(255,255,255,0.85), rgba(255,255,255,0.85)),
+    url("https://i.pinimg.com/564x/5f/6b/45/5f6b45f70c41a8e0f3a8c0b3c7b8e6b7.jpg");
+  background-size: cover;
+  background-position: center;
 }
 
 .hero-content h1 {
-  font-size: 3rem;
-  color: #ff6f91;
+  font-size: 4rem;
+  color: #333;
 }
 
 .hero-content p {
-  max-width: 450px;
-  margin: 20px 0;
+  max-width: 500px;
+  margin: 15px 0 25px;
 }
 
-/* ===== HERO IMAGE (AUTO ADA GAMBAR) ===== */
-.hero-logo {
+.btn-hero {
+  display: inline-block;
+  padding: 12px 35px;
+  background: #ffb3c6;
+  color: white;
+  border-radius: 50px;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+/* GAMBAR HERO (INI PASTI MUNCUL) */
+.hero-logo img {
   width: 320px;
-  height: 320px;
-  background-image: url("https://i.pinimg.com/564x/8f/8b/88/8f8b88e4fbbad89b5ddc7e2b7b3f2e47.jpg");
-  background-size: cover;
-  background-position: center;
-  border-radius: 50%;
-  box-shadow: 0 10px 25px rgba(255, 143, 171, 0.4);
+  border-radius: 30px;
+  background: white;
+  padding: 15px;
+  box-shadow: 0 15px 40px rgba(255,179,198,0.6);
   animation: float 5s ease-in-out infinite;
 }
 
 @keyframes float {
   0%,100% { transform: translateY(0); }
-  50% { transform: translateY(-15px); }
+  50% { transform: translateY(-20px); }
 }
 
-/* ===== SECTION ===== */
+/* ===== CONTAINER ===== */
 .container {
-  padding: 80px 10%;
+  padding: 100px 10%;
 }
 
 h2 {
   text-align: center;
-  font-size: 2.3rem;
-  margin-bottom: 40px;
-  color: #ff8fab;
+  font-size: 2.5rem;
+  margin-bottom: 50px;
+  color: #333;
+}
+
+/* ===== ABOUT ===== */
+.about {
+  background: #ffffff;
+  text-align: center;
 }
 
 /* ===== PROYEK ===== */
-.proyek-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-  gap: 25px;
+.bg-light {
+  background: #fff5f8;
 }
 
-/* CARD DENGAN GAMBAR OTOMATIS */
+.proyek-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 30px;
+}
+
 .proyek-card {
-  background: #fff;
+  background: white;
   border-radius: 20px;
   overflow: hidden;
-  box-shadow: 0 8px 20px rgba(0,0,0,0.08);
+  text-decoration: none;
+  color: inherit;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.08);
   transition: 0.3s;
 }
 
 .proyek-card:hover {
-  transform: translateY(-8px);
+  transform: translateY(-10px);
 }
 
-/* GAMBAR PROYEK (AUTO) */
-.proyek-card::before {
-  content: "";
-  display: block;
-  height: 180px;
-  background-image: url("https://i.pinimg.com/564x/53/7a/8b/537a8b85b7b8ff4f80b7d22c9c2c8c56.jpg");
-  background-size: cover;
-  background-position: center;
+/* GAMBAR PROJECT (DIKUNCI UKURANNYA) */
+.proyek-card img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
 }
 
 .proyek-info {
@@ -121,45 +166,33 @@ h2 {
   text-align: center;
 }
 
-/* ===== PDF ===== */
-.pdf-container {
-  width: 100%;
-  height: 600px;
-  border-radius: 20px;
-  overflow: hidden;
-  box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+/* ===== MEDSOS ===== */
+.medsos-list {
+  display: flex;
+  justify-content: center;
+  gap: 40px;
+  flex-wrap: wrap;
 }
 
-.pdf-container iframe {
-  width: 100%;
-  height: 100%;
-  border: none;
-}
-
-/* ===== BUTTON ===== */
-.btn-cek {
-  display: inline-block;
-  margin-top: 20px;
-  padding: 10px 25px;
-  background: #ffb3c6;
-  color: #fff;
-  border-radius: 30px;
+.medsos-item {
   text-decoration: none;
-  font-weight: 600;
-  transition: 0.3s;
+  color: #555;
+  text-align: center;
 }
 
-.btn-cek:hover {
-  background: #ff8fab;
+/* ICON MEDSOS PASTI MUNCUL */
+.medsos-item img {
+  width: 55px;
+  height: 55px;
+  margin-bottom: 10px;
 }
 
 /* ===== FOOTER ===== */
 footer {
-  margin-top: 80px;
-  padding: 30px;
-  background: #ffb3c6;
-  text-align: center;
+  background: #ff8fab;
   color: white;
+  text-align: center;
+  padding: 40px;
 }
 
 /* ===== RESPONSIVE ===== */
@@ -169,8 +202,15 @@ footer {
     text-align: center;
   }
 
-  .hero-logo {
-    width: 220px;
-    height: 220px;
+  .hero-content h1 {
+    font-size: 2.5rem;
+  }
+
+  .hero-logo img {
+    width: 250px;
+  }
+
+  nav ul {
+    display: none;
   }
 }
