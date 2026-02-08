@@ -1,198 +1,251 @@
-<!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>MyPortofolio - Azaria</title>
+/* ================= GLOBAL ================= */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
 
-    <!-- CSS -->
-    <link rel="stylesheet" href="style.css" />
+body {
+    background-color: #fffdf0;
+    color: #444;
+    line-height: 1.6;
+    scroll-behavior: smooth;
+}
 
-    <!-- FAVICON SANRIO -->
-    <link
-      rel="icon"
-      href="https://cdn-icons-png.flaticon.com/512/616/616430.png"
-    />
-  </head>
+/* ================= NAVIGASI ================= */
+header {
+    background-color: #ffffff;
+    padding: 1rem 10%;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 1000;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+}
 
-  <body>
-    <!-- ================= NAVIGASI ================= -->
-    <header>
-      <nav>
-        <div class="logo">my<span>Porto</span></div>
-        <ul>
-          <li><a href="#home">Home</a></li>
-          <li><a href="#about">About</a></li>
-          <li><a href="#proyek">Proyek</a></li>
-          <li><a href="#medsos">Medsos</a></li>
-        </ul>
-      </nav>
-    </header>
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
 
-    <!-- ================= HOME / HERO ================= -->
-    <section id="home" class="hero">
-      <div class="hero-content">
-        <p>Hi, Welcome to My Website</p>
-        <h1>Azariaa</h1>
-        <p>
-          Website ini merupakan website portofolio saya yang merupakan deskripsi
-          singkat tentang saya.
-        </p>
-        <a href="#about" class="btn-hero">About Me</a>
-      </div>
+.logo {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: #333;
+}
 
-      <!-- HERO IMAGE SANRIO -->
-      <div class="hero-logo">
-        <img
-          src="https://i.pinimg.com/736x/6c/7a/9d/6c7a9d6e4c8a2d7b1e5f9a3c6b8d4e2f.jpg"
-          alt="Sanrio Hero"
-        />
-      </div>
-    </section>
+.logo span {
+    color: #ffd93d;
+}
 
-    <!-- ================= ABOUT ================= -->
-    <section id="about" class="container about">
-      <h2>About Me</h2>
-      <div class="about-content">
-        <p>
-          Nama saya <strong>Azaria Davita</strong>, berasal dari
-          <strong>Surabaya</strong>, dan merupakan siswi
-          <strong>SMA IPIEMS</strong>. Saya adalah seorang pelajar yang senang
-          belajar dan selalu berusaha menjadi pribadi yang lebih baik.
-        </p>
-        <p>Ke depan, saya ingin terus belajar dan tidak mudah menyerah.</p>
-      </div>
-    </section>
+nav ul {
+    display: flex;
+    list-style: none;
+}
 
-    <!-- ================= PROYEK ================= -->
-    <section id="proyek" class="container bg-light proyek">
-      <h2>Proyek Saya</h2>
+nav ul li {
+    margin-left: 20px;
+}
 
-      <div class="proyek-grid">
-        <!-- KARTU 1 -->
-        <a href="#" target="_blank" class="proyek-card">
-          <img
-            src="https://i.pinimg.com/736x/3f/9a/5c/3f9a5c8e2b6a7d4c1f9e5b3a8c6d7e2.jpg"
-            alt="Excel Project"
-          />
-          <div class="proyek-info">
-            <h3>Excel</h3>
-            <p>My Excel Project</p>
-          </div>
-        </a>
+nav ul li a {
+    text-decoration: none;
+    color: #555;
+    font-weight: 500;
+    transition: 0.3s;
+}
 
-        <!-- KARTU 2 -->
-        <a href="#" target="_blank" class="proyek-card">
-          <img
-            src="https://i.pinimg.com/736x/3f/9a/5c/3f9a5c8e2b6a7d4c1f9e5b3a8c6d7e2.jpg"
-            alt="Arduino LED"
-          />
-          <div class="proyek-info">
-            <h3>Arduino LED</h3>
-            <p>Arduino LED Control Project</p>
-          </div>
-        </a>
+nav ul li a:hover {
+    color: #ffb703;
+}
 
-        <!-- KARTU 3 -->
-        <a href="#" target="_blank" class="proyek-card">
-          <img
-            src="https://i.pinimg.com/736x/3f/9a/5c/3f9a5c8e2b6a7d4c1f9e5b3a8c6d7e2.jpg"
-            alt="Arduino Lirik"
-          />
-          <div class="proyek-info">
-            <h3>Arduino Lirik</h3>
-            <p>Arduino Lyric Display Project</p>
-          </div>
-        </a>
+/* ================= HERO ================= */
+.hero {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 10%;
+    padding-top: 80px;
+    background: linear-gradient(135deg, #fff9db 0%, #ffffff 100%);
+}
 
-        <!-- KARTU 4 -->
-        <a href="#" target="_blank" class="proyek-card">
-          <img
-            src="https://i.pinimg.com/736x/3f/9a/5c/3f9a5c8e2b6a7d4c1f9e5b3a8c6d7e2.jpg"
-            alt="Flowchart"
-          />
-          <div class="proyek-info">
-            <h3>Flowchart</h3>
-            <p>My Flowchart Project</p>
-          </div>
-        </a>
+.hero-content h1 {
+    font-size: 4rem;
+    color: #333;
+    margin-bottom: 10px;
+}
 
-        <!-- KARTU 5 -->
-        <a href="#" target="_blank" class="proyek-card">
-          <img
-            src="https://i.pinimg.com/736x/3f/9a/5c/3f9a5c8e2b6a7d4c1f9e5b3a8c6d7e2.jpg"
-            alt="Website"
-          />
-          <div class="proyek-info">
-            <h3>Website Sederhana</h3>
-            <p>My Website Project</p>
-          </div>
-        </a>
+.hero-content p {
+    font-size: 1.1rem;
+    max-width: 500px;
+    margin-bottom: 25px;
+}
 
-        <!-- KARTU 6 -->
-        <a href="#" target="_blank" class="proyek-card">
-          <img
-            src="https://i.pinimg.com/736x/3f/9a/5c/3f9a5c8e2b6a7d4c1f9e5b3a8c6d7e2.jpg"
-            alt="PSAJ"
-          />
-          <div class="proyek-info">
-            <h3>Website PSAJ</h3>
-            <p>Website PSAJ Non Tulis</p>
-          </div>
-        </a>
-      </div>
-    </section>
+.btn-hero {
+    display: inline-block;
+    padding: 12px 30px;
+    background-color: #ffd93d;
+    color: #333;
+    text-decoration: none;
+    border-radius: 50px;
+    font-weight: bold;
+    transition: 0.3s;
+}
 
-    <!-- ================= MEDSOS ================= -->
-    <section id="medsos" class="container medsos">
-      <h2>Media Sosial</h2>
+.btn-hero:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 5px 15px rgba(255, 217, 61, 0.4);
+}
 
-      <div class="medsos-list">
-        <a
-          href="https://github.com/azariaa11"
-          target="_blank"
-          class="medsos-item"
-        >
-          <img
-            src="https://cdn-icons-png.flaticon.com/512/616/616430.png"
-            alt="GitHub"
-          />
-          <span>Github</span>
-        </a>
+/* HERO IMAGE — AMAN (TIDAK GEDE) */
+.hero-logo img {
+    width: 350px;
+    max-width: 100%;
+    height: auto;
+    border-radius: 30% 70% 70% 30% / 30% 30% 70% 70%;
+    animation: float 6s ease-in-out infinite;
+}
 
-        <a
-          href="https://instagram.com/azrriaa_"
-          target="_blank"
-          class="medsos-item"
-        >
-          <img
-            src="https://cdn-icons-png.flaticon.com/512/1973/1973813.png"
-            alt="Instagram"
-          />
-          <span>Instagram</span>
-        </a>
+@keyframes float {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-20px); }
+}
 
-        <a href="#" target="_blank" class="medsos-item">
-          <img
-            src="https://cdn-icons-png.flaticon.com/512/1973/1973813.png"
-            alt="TikTok"
-          />
-          <span>TikTok</span>
-        </a>
+/* ================= CONTAINER ================= */
+.container {
+    padding: 80px 10%;
+}
 
-        <a href="#" target="_blank" class="medsos-item">
-          <img
-            src="https://cdn-icons-png.flaticon.com/512/616/616430.png"
-            alt="LinkedIn"
-          />
-          <span>LinkedIn</span>
-        </a>
-      </div>
-    </section>
+h2 {
+    text-align: center;
+    font-size: 2.5rem;
+    margin-bottom: 40px;
+    position: relative;
+}
 
-    <!-- ================= FOOTER ================= -->
-    <footer>
-      <p>© 2026 AzariaProject</p>
-    </footer>
-  </body>
-</html>
+h2::after {
+    content: '';
+    width: 60px;
+    height: 5px;
+    background: #ffd93d;
+    position: absolute;
+    bottom: -10px;
+    left: 50%;
+    transform: translateX(-50%);
+    border-radius: 5px;
+}
+
+/* ================= ABOUT ================= */
+.about {
+    background-color: #fff;
+    text-align: center;
+}
+
+.about-content p {
+    max-width: 800px;
+    margin: 0 auto 20px;
+}
+
+/* ================= PROYEK ================= */
+.bg-light {
+    background-color: #fefae0;
+}
+
+.proyek-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 25px;
+}
+
+.proyek-card {
+    background: #fff;
+    text-decoration: none;
+    color: inherit;
+    border-radius: 15px;
+    overflow: hidden;
+    border: 1px solid #eee;
+    transition: 0.3s;
+}
+
+.proyek-card:hover {
+    transform: scale(1.03);
+    box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+}
+
+/* GAMBAR PROYEK — DIKUNCI */
+.proyek-card img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    display: block;
+}
+
+.proyek-info {
+    padding: 20px;
+}
+
+.proyek-info h3 {
+    margin-bottom: 10px;
+    color: #333;
+}
+
+/* ================= MEDSOS ================= */
+.medsos-list {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    flex-wrap: wrap;
+}
+
+.medsos-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-decoration: none;
+    color: #555;
+    transition: 0.3s;
+}
+
+.medsos-item img {
+    width: 50px;
+    height: 50px;
+    margin-bottom: 10px;
+}
+
+.medsos-item:hover {
+    color: #ffb703;
+    transform: translateY(-5px);
+}
+
+/* ================= FOOTER ================= */
+footer {
+    text-align: center;
+    padding: 40px;
+    background-color: #333;
+    color: #fff;
+}
+
+/* ================= RESPONSIVE ================= */
+@media (max-width: 768px) {
+    .hero {
+        flex-direction: column;
+        text-align: center;
+        height: auto;
+        padding-bottom: 50px;
+    }
+
+    .hero-content h1 {
+        font-size: 2.5rem;
+    }
+
+    .hero-logo img {
+        width: 250px;
+        margin-top: 30px;
+    }
+
+    nav ul {
+        display: none;
+    }
+}
