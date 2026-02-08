@@ -1,251 +1,176 @@
-/* ================= GLOBAL ================= */
+/* ===== IMPORT FONT CUTE ===== */
+@import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@400;600;700&display=swap');
+
+/* ===== RESET ===== */
 * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Quicksand', sans-serif;
 }
 
 body {
-    background-color: #fffdf0;
-    color: #444;
-    line-height: 1.6;
-    scroll-behavior: smooth;
+  background: linear-gradient(135deg, #fff0f6, #fffde7);
+  color: #444;
 }
 
-/* ================= NAVIGASI ================= */
+/* ===== HEADER ===== */
 header {
-    background-color: #ffffff;
-    padding: 1rem 10%;
-    position: fixed;
-    width: 100%;
-    top: 0;
-    z-index: 1000;
-    box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+  position: fixed;
+  top: 0;
+  width: 100%;
+  background: #fff;
+  padding: 15px 10%;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+  z-index: 999;
 }
 
 nav {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
 
 .logo {
-    font-size: 1.5rem;
-    font-weight: bold;
-    color: #333;
+  font-size: 1.6rem;
+  font-weight: 700;
+  color: #ff8fab;
 }
 
-.logo span {
-    color: #ffd93d;
-}
-
-nav ul {
-    display: flex;
-    list-style: none;
-}
-
-nav ul li {
-    margin-left: 20px;
-}
-
-nav ul li a {
-    text-decoration: none;
-    color: #555;
-    font-weight: 500;
-    transition: 0.3s;
-}
-
-nav ul li a:hover {
-    color: #ffb703;
-}
-
-/* ================= HERO ================= */
+/* ===== HERO ===== */
 .hero {
-    min-height: 100vh;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    padding: 0 10%;
-    padding-top: 80px;
-    background: linear-gradient(135deg, #fff9db 0%, #ffffff 100%);
+  min-height: 100vh;
+  padding: 120px 10% 60px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 40px;
 }
 
 .hero-content h1 {
-    font-size: 4rem;
-    color: #333;
-    margin-bottom: 10px;
+  font-size: 3rem;
+  color: #ff6f91;
 }
 
 .hero-content p {
-    font-size: 1.1rem;
-    max-width: 500px;
-    margin-bottom: 25px;
+  max-width: 450px;
+  margin: 20px 0;
 }
 
-.btn-hero {
-    display: inline-block;
-    padding: 12px 30px;
-    background-color: #ffd93d;
-    color: #333;
-    text-decoration: none;
-    border-radius: 50px;
-    font-weight: bold;
-    transition: 0.3s;
-}
-
-.btn-hero:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 5px 15px rgba(255, 217, 61, 0.4);
-}
-
-/* HERO IMAGE — AMAN (TIDAK GEDE) */
-.hero-logo img {
-    width: 350px;
-    max-width: 100%;
-    height: auto;
-    border-radius: 30% 70% 70% 30% / 30% 30% 70% 70%;
-    animation: float 6s ease-in-out infinite;
+/* ===== HERO IMAGE (AUTO ADA GAMBAR) ===== */
+.hero-logo {
+  width: 320px;
+  height: 320px;
+  background-image: url("https://i.pinimg.com/564x/8f/8b/88/8f8b88e4fbbad89b5ddc7e2b7b3f2e47.jpg");
+  background-size: cover;
+  background-position: center;
+  border-radius: 50%;
+  box-shadow: 0 10px 25px rgba(255, 143, 171, 0.4);
+  animation: float 5s ease-in-out infinite;
 }
 
 @keyframes float {
-    0%, 100% { transform: translateY(0); }
-    50% { transform: translateY(-20px); }
+  0%,100% { transform: translateY(0); }
+  50% { transform: translateY(-15px); }
 }
 
-/* ================= CONTAINER ================= */
+/* ===== SECTION ===== */
 .container {
-    padding: 80px 10%;
+  padding: 80px 10%;
 }
 
 h2 {
-    text-align: center;
-    font-size: 2.5rem;
-    margin-bottom: 40px;
-    position: relative;
+  text-align: center;
+  font-size: 2.3rem;
+  margin-bottom: 40px;
+  color: #ff8fab;
 }
 
-h2::after {
-    content: '';
-    width: 60px;
-    height: 5px;
-    background: #ffd93d;
-    position: absolute;
-    bottom: -10px;
-    left: 50%;
-    transform: translateX(-50%);
-    border-radius: 5px;
-}
-
-/* ================= ABOUT ================= */
-.about {
-    background-color: #fff;
-    text-align: center;
-}
-
-.about-content p {
-    max-width: 800px;
-    margin: 0 auto 20px;
-}
-
-/* ================= PROYEK ================= */
-.bg-light {
-    background-color: #fefae0;
-}
-
+/* ===== PROYEK ===== */
 .proyek-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 25px;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 25px;
 }
 
+/* CARD DENGAN GAMBAR OTOMATIS */
 .proyek-card {
-    background: #fff;
-    text-decoration: none;
-    color: inherit;
-    border-radius: 15px;
-    overflow: hidden;
-    border: 1px solid #eee;
-    transition: 0.3s;
+  background: #fff;
+  border-radius: 20px;
+  overflow: hidden;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.08);
+  transition: 0.3s;
 }
 
 .proyek-card:hover {
-    transform: scale(1.03);
-    box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+  transform: translateY(-8px);
 }
 
-/* GAMBAR PROYEK — DIKUNCI */
-.proyek-card img {
-    width: 100%;
-    height: 200px;
-    object-fit: cover;
-    display: block;
+/* GAMBAR PROYEK (AUTO) */
+.proyek-card::before {
+  content: "";
+  display: block;
+  height: 180px;
+  background-image: url("https://i.pinimg.com/564x/53/7a/8b/537a8b85b7b8ff4f80b7d22c9c2c8c56.jpg");
+  background-size: cover;
+  background-position: center;
 }
 
 .proyek-info {
-    padding: 20px;
+  padding: 20px;
+  text-align: center;
 }
 
-.proyek-info h3 {
-    margin-bottom: 10px;
-    color: #333;
+/* ===== PDF ===== */
+.pdf-container {
+  width: 100%;
+  height: 600px;
+  border-radius: 20px;
+  overflow: hidden;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.1);
 }
 
-/* ================= MEDSOS ================= */
-.medsos-list {
-    display: flex;
-    justify-content: center;
-    gap: 30px;
-    flex-wrap: wrap;
+.pdf-container iframe {
+  width: 100%;
+  height: 100%;
+  border: none;
 }
 
-.medsos-item {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    text-decoration: none;
-    color: #555;
-    transition: 0.3s;
+/* ===== BUTTON ===== */
+.btn-cek {
+  display: inline-block;
+  margin-top: 20px;
+  padding: 10px 25px;
+  background: #ffb3c6;
+  color: #fff;
+  border-radius: 30px;
+  text-decoration: none;
+  font-weight: 600;
+  transition: 0.3s;
 }
 
-.medsos-item img {
-    width: 50px;
-    height: 50px;
-    margin-bottom: 10px;
+.btn-cek:hover {
+  background: #ff8fab;
 }
 
-.medsos-item:hover {
-    color: #ffb703;
-    transform: translateY(-5px);
-}
-
-/* ================= FOOTER ================= */
+/* ===== FOOTER ===== */
 footer {
-    text-align: center;
-    padding: 40px;
-    background-color: #333;
-    color: #fff;
+  margin-top: 80px;
+  padding: 30px;
+  background: #ffb3c6;
+  text-align: center;
+  color: white;
 }
 
-/* ================= RESPONSIVE ================= */
+/* ===== RESPONSIVE ===== */
 @media (max-width: 768px) {
-    .hero {
-        flex-direction: column;
-        text-align: center;
-        height: auto;
-        padding-bottom: 50px;
-    }
+  .hero {
+    flex-direction: column;
+    text-align: center;
+  }
 
-    .hero-content h1 {
-        font-size: 2.5rem;
-    }
-
-    .hero-logo img {
-        width: 250px;
-        margin-top: 30px;
-    }
-
-    nav ul {
-        display: none;
-    }
+  .hero-logo {
+    width: 220px;
+    height: 220px;
+  }
 }
