@@ -1,116 +1,180 @@
 <!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>MyPortofolio - Azaria</title>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Portofolio Azaria</title>
 
-    <!-- FONT CUTE -->
-    <link
-      href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap"
-      rel="stylesheet"
-    />
+  <!-- FONT CUTE -->
+  <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@400;600&display=swap" rel="stylesheet">
 
-    <link rel="stylesheet" href="style.css" />
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Quicksand', sans-serif;
+    }
 
-    <!-- FAVICON CUTE -->
-    <link
-      rel="icon"
-      href="https://cdn-icons-png.flaticon.com/512/1973/1973813.png"
-    />
-  </head>
+    body {
+      background: linear-gradient(135deg, #ffe6f0, #fff);
+      color: #444;
+    }
 
-  <body>
-    <!-- NAVBAR -->
-    <header>
-      <nav>
-        <div class="logo">my<span>Porto</span></div>
-        <ul>
-          <li><a href="#home">Home</a></li>
-          <li><a href="#about">About</a></li>
-          <li><a href="#proyek">Proyek</a></li>
-          <li><a href="#medsos">Medsos</a></li>
-        </ul>
-      </nav>
-    </header>
+    header {
+      background: white;
+      padding: 15px 10%;
+      position: fixed;
+      width: 100%;
+      top: 0;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+      z-index: 1000;
+    }
 
-    <!-- HERO -->
-    <section id="home" class="hero">
-      <div class="hero-content">
-        <p>Hi, Welcome to My Website</p>
-        <h1>Azariaa</h1>
-        <p>
-          Website ini merupakan website portofolio saya yang berisi deskripsi
-          singkat tentang saya.
-        </p>
-        <a href="#about" class="btn-hero">About Me</a>
-      </div>
+    nav {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
 
-      <!-- GAMBAR SANRIO (PASTI MUNCUL) -->
-      <div class="hero-logo">
-        <img
-          src="https://i.pinimg.com/564x/7c/18/44/7c1844a6ff9edc7d9c59d7f0f1b8d4c2.jpg"
-          alt="Sanrio Cute"
-        />
-      </div>
-    </section>
+    .logo {
+      font-size: 1.6rem;
+      font-weight: 600;
+      color: #ff69b4;
+    }
 
-    <!-- ABOUT -->
-    <section id="about" class="container about">
-      <h2>About Me</h2>
-      <div class="about-content">
-        <p>
-          Nama saya <strong>Azaria Davita</strong>, berasal dari
-          <strong>Surabaya</strong>, siswi <strong>SMA IPIEMS</strong>.
-        </p>
-        <p>
-          Saya senang belajar hal baru dan ingin terus berkembang ke depan.
-        </p>
-      </div>
-    </section>
+    nav ul {
+      display: flex;
+      list-style: none;
+      gap: 20px;
+    }
 
-    <!-- PROYEK -->
-    <section id="proyek" class="container bg-light proyek">
-      <h2>Proyek Saya</h2>
-      <div class="proyek-grid">
-        <div class="proyek-card">
-          <img
-            src="https://i.pinimg.com/564x/8e/91/8b/8e918b9e7db6b5a14fcb0a9c8f1a4a34.jpg"
-            alt="Cute Project"
-          />
-          <div class="proyek-info">
-            <h3>Project 1</h3>
-            <p>My Cute Project</p>
-          </div>
-        </div>
-      </div>
-    </section>
+    nav ul li a {
+      text-decoration: none;
+      color: #555;
+      font-weight: 600;
+    }
 
-    <!-- MEDSOS -->
-    <section id="medsos" class="container medsos">
-      <h2>Media Sosial</h2>
-      <div class="medsos-list">
-        <a href="#" class="medsos-item">
-          <img
-            src="https://cdn-icons-png.flaticon.com/512/733/733553.png"
-            alt="Github"
-          />
-          <span>Github</span>
-        </a>
+    /* HERO */
+    .hero {
+      height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 120px 10%;
+    }
 
-        <a href="#" class="medsos-item">
-          <img
-            src="https://cdn-icons-png.flaticon.com/512/2111/2111463.png"
-            alt="Instagram"
-          />
-          <span>Instagram</span>
-        </a>
-      </div>
-    </section>
+    .hero-content h1 {
+      font-size: 3.5rem;
+      color: #ff69b4;
+      margin-bottom: 15px;
+    }
 
-    <!-- FOOTER -->
-    <footer>
-      <p>© 2026 AzariaProject</p>
-    </footer>
-  </body>
+    .hero-content p {
+      max-width: 500px;
+      margin-bottom: 25px;
+    }
+
+    .btn {
+      padding: 12px 30px;
+      background: #ff69b4;
+      color: white;
+      border-radius: 30px;
+      text-decoration: none;
+      font-weight: 600;
+    }
+
+    .hero-img img {
+      width: 320px;
+      border-radius: 25px;
+      box-shadow: 0 15px 30px rgba(255,105,180,0.4);
+      animation: float 4s ease-in-out infinite;
+    }
+
+    @keyframes float {
+      0%,100% { transform: translateY(0); }
+      50% { transform: translateY(-15px); }
+    }
+
+    section {
+      padding: 80px 10%;
+      text-align: center;
+    }
+
+    h2 {
+      font-size: 2.5rem;
+      color: #ff69b4;
+      margin-bottom: 30px;
+    }
+
+    .card {
+      background: white;
+      padding: 25px;
+      border-radius: 20px;
+      max-width: 600px;
+      margin: auto;
+      box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+    }
+
+    footer {
+      background: #ff69b4;
+      color: white;
+      padding: 30px;
+      text-align: center;
+    }
+
+    @media (max-width: 768px) {
+      .hero {
+        flex-direction: column;
+        text-align: center;
+      }
+
+      .hero-img img {
+        margin-top: 30px;
+        width: 250px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+<header>
+  <nav>
+    <div class="logo">Azaria ✿</div>
+    <ul>
+      <li><a href="#home">Home</a></li>
+      <li><a href="#about">About</a></li>
+    </ul>
+  </nav>
+</header>
+
+<section class="hero" id="home">
+  <div class="hero-content">
+    <h1>Hello ♡</h1>
+    <p>Ini adalah website portofolio saya dengan tema cute & aesthetic.</p>
+    <a href="#about" class="btn">About Me</a>
+  </div>
+
+  <!-- GAMBAR CUTE (PASTI MUNCUL) -->
+  <div class="hero-img">
+    <img src="https://i.pinimg.com/564x/47/2e/4c/472e4c4db7e8b8c8cfc3b0b88e8bb3a6.jpg" alt="Sanrio Cute">
+  </div>
+</section>
+
+<section id="about">
+  <h2>About Me</h2>
+  <div class="card">
+    <p>
+      Nama saya <strong>Azaria</strong>. Saya siswi SMA yang sedang belajar
+      membuat website portofolio dengan desain lucu dan estetik 🌸
+    </p>
+  </div>
+</section>
+
+<footer>
+  © 2026 Azaria Project ♡
+</footer>
+
+</body>
 </html>
