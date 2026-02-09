@@ -1,216 +1,168 @@
-/* ===== RESET ===== */
+/* --- Pengaturan Dasar --- */
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family: 'Poppins', 'Segoe UI', sans-serif;
-}
-
-body {
-  background: linear-gradient(135deg, #fff0f5, #ffffff);
-  color: #444;
+  font-family: 'Poppins', sans-serif; /* Pastikan font ini rapi */
   scroll-behavior: smooth;
 }
 
-/* ===== HEADER ===== */
+body {
+  line-height: 1.6;
+  color: #333;
+  background-color: #fff;
+}
+
+li { list-style: none; }
+a { text-decoration: none; color: inherit; }
+
+/* --- Navigasi --- */
 header {
+  background: #fff;
+  padding: 1rem 5%;
   position: fixed;
-  top: 0;
   width: 100%;
-  background: rgba(255,255,255,0.95);
-  box-shadow: 0 5px 15px rgba(0,0,0,0.05);
-  z-index: 999;
+  top: 0;
+  z-index: 1000;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.1);
 }
 
 nav {
-  max-width: 1200px;
-  margin: auto;
-  padding: 15px 30px;
   display: flex;
   justify-content: space-between;
   align-items: center;
 }
 
 .logo {
-  font-size: 1.6rem;
+  font-size: 1.5rem;
   font-weight: bold;
+  color: #2d3436;
 }
 
-.logo span {
-  color: #ff8fab;
-}
+.logo span { color: #0984e3; } /* Warna aksen biru */
 
-nav ul {
-  display: flex;
-  list-style: none;
-}
+nav ul { display: flex; }
 
-nav ul li {
-  margin-left: 25px;
-}
+nav ul li { margin-left: 2rem; }
 
-nav ul li a {
-  text-decoration: none;
-  color: #555;
-  font-weight: 500;
-}
+nav ul li a:hover { color: #0984e3; transition: 0.3s; }
 
-nav ul li a:hover {
-  color: #ff8fab;
-}
-
-/* ===== HERO ===== */
+/* --- Hero Section --- */
 .hero {
-  min-height: 100vh;
-  padding: 120px 10%;
+  height: 100vh;
   display: flex;
   align-items: center;
   justify-content: space-between;
-  gap: 40px;
-
-  /* GAMBAR BACKGROUND LUCU (SANRIO STYLE) */
-  background-image:
-    linear-gradient(rgba(255,255,255,0.85), rgba(255,255,255,0.85)),
-    url("https://i.pinimg.com/564x/5f/6b/45/5f6b45f70c41a8e0f3a8c0b3c7b8e6b7.jpg");
-  background-size: cover;
-  background-position: center;
+  padding: 0 10%;
+  background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+  margin-top: 60px;
 }
 
 .hero-content h1 {
   font-size: 4rem;
-  color: #333;
-}
-
-.hero-content p {
-  max-width: 500px;
-  margin: 15px 0 25px;
+  color: #2d3436;
+  margin: 10px 0;
 }
 
 .btn-hero {
   display: inline-block;
-  padding: 12px 35px;
-  background: #ffb3c6;
-  color: white;
-  border-radius: 50px;
-  text-decoration: none;
-  font-weight: bold;
+  margin-top: 20px;
+  padding: 12px 30px;
+  background: #0984e3;
+  color: #fff;
+  border-radius: 25px;
+  transition: 0.3s ease;
 }
 
-/* GAMBAR HERO (INI PASTI MUNCUL) */
+.btn-hero:hover { background: #74b9ff; transform: translateY(-3px); }
+
 .hero-logo img {
-  width: 320px;
-  border-radius: 30px;
-  background: white;
-  padding: 15px;
-  box-shadow: 0 15px 40px rgba(255,179,198,0.6);
-  animation: float 5s ease-in-out infinite;
+  width: 300px;
+  height: 300px;
+  object-fit: cover;
+  border-radius: 50%;
+  border: 8px solid #fff;
+  box-shadow: 0 10px 20px rgba(0,0,0,0.1);
 }
 
-@keyframes float {
-  0%,100% { transform: translateY(0); }
-  50% { transform: translateY(-20px); }
-}
-
-/* ===== CONTAINER ===== */
-.container {
-  padding: 100px 10%;
-}
+/* --- Container & General Section --- */
+.container { padding: 80px 10%; text-align: center; }
 
 h2 {
-  text-align: center;
   font-size: 2.5rem;
-  margin-bottom: 50px;
-  color: #333;
+  margin-bottom: 40px;
+  position: relative;
 }
 
-/* ===== ABOUT ===== */
-.about {
-  background: #ffffff;
-  text-align: center;
+h2::after {
+  content: '';
+  width: 50px;
+  height: 5px;
+  background: #0984e3;
+  position: absolute;
+  bottom: -10px;
+  left: 50%;
+  transform: translateX(-50%);
 }
 
-/* ===== PROYEK ===== */
-.bg-light {
-  background: #fff5f8;
-}
+.bg-light { background-color: #f9f9f9; }
 
+/* --- Proyek Grid --- */
 .proyek-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-  gap: 30px;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 20px;
 }
 
 .proyek-card {
-  background: white;
-  border-radius: 20px;
+  background: #fff;
+  border-radius: 15px;
   overflow: hidden;
-  text-decoration: none;
-  color: inherit;
-  box-shadow: 0 10px 25px rgba(0,0,0,0.08);
+  box-shadow: 0 5px 15px rgba(0,0,0,0.1);
   transition: 0.3s;
 }
 
-.proyek-card:hover {
-  transform: translateY(-10px);
-}
+.proyek-card:hover { transform: scale(1.05); }
 
-/* GAMBAR PROJECT (DIKUNCI UKURANNYA) */
 .proyek-card img {
   width: 100%;
   height: 200px;
   object-fit: cover;
 }
 
-.proyek-info {
-  padding: 20px;
-  text-align: center;
-}
+.proyek-info { padding: 20px; }
 
-/* ===== MEDSOS ===== */
+/* --- Media Sosial --- */
 .medsos-list {
   display: flex;
   justify-content: center;
-  gap: 40px;
+  gap: 30px;
   flex-wrap: wrap;
 }
 
 .medsos-item {
-  text-decoration: none;
-  color: #555;
-  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  transition: 0.3s;
 }
 
-/* ICON MEDSOS PASTI MUNCUL */
-.medsos-item img {
-  width: 55px;
-  height: 55px;
-  margin-bottom: 10px;
-}
+.medsos-item img { width: 50px; margin-bottom: 10px; }
 
-/* ===== FOOTER ===== */
+.medsos-item:hover { transform: translateY(-5px); color: #0984e3; }
+
+/* --- Footer --- */
 footer {
-  background: #ff8fab;
-  color: white;
+  background: #2d3436;
+  color: #fff;
   text-align: center;
-  padding: 40px;
+  padding: 20px 0;
 }
 
-/* ===== RESPONSIVE ===== */
+/* --- Responsive (Mobile) --- */
 @media (max-width: 768px) {
-  .hero {
-    flex-direction: column;
-    text-align: center;
-  }
-
-  .hero-content h1 {
-    font-size: 2.5rem;
-  }
-
-  .hero-logo img {
-    width: 250px;
-  }
-
-  nav ul {
-    display: none;
-  }
+  .hero { flex-direction: column-reverse; text-align: center; padding-top: 50px; }
+  .hero-content h1 { font-size: 2.5rem; }
+  nav ul { display: none; } /* Sembunyikan menu di HP demi kesederhanaan */
+  .hero-logo img { width: 200px; height: 200px; }
 }
