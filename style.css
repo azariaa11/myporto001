@@ -3,18 +3,14 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family: 'Poppins', sans-serif; /* Pastikan font ini rapi */
+  font-family: 'Poppins', sans-serif;
   scroll-behavior: smooth;
 }
 
 body {
-  line-height: 1.6;
-  color: #333;
   background-color: #fff;
+  overflow-x: hidden;
 }
-
-li { list-style: none; }
-a { text-decoration: none; color: inherit; }
 
 /* --- Navigasi --- */
 header {
@@ -24,7 +20,7 @@ header {
   width: 100%;
   top: 0;
   z-index: 1000;
-  box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+  box-shadow: 0 2px 10px rgba(255, 182, 193, 0.3); /* Shadow Pink */
 }
 
 nav {
@@ -33,48 +29,43 @@ nav {
   align-items: center;
 }
 
-.logo {
-  font-size: 1.5rem;
-  font-weight: bold;
-  color: #2d3436;
-}
+.logo { font-size: 1.5rem; font-weight: bold; color: #d63384; }
+.logo span { color: #ff8fa3; }
 
-.logo span { color: #0984e3; } /* Warna aksen biru */
-
-nav ul { display: flex; }
-
+nav ul { display: flex; list-style: none; }
 nav ul li { margin-left: 2rem; }
+nav ul li a { text-decoration: none; color: #555; font-weight: 500; }
+nav ul li a:hover { color: #ff8fa3; transition: 0.3s; }
 
-nav ul li a:hover { color: #0984e3; transition: 0.3s; }
-
-/* --- Hero Section --- */
+/* --- Hero Section (Home) --- */
 .hero {
   height: 100vh;
   display: flex;
   align-items: center;
   justify-content: space-between;
   padding: 0 10%;
-  background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
-  margin-top: 60px;
+  background: #fff0f3; /* Pink Sangat Muda */
+  position: relative; /* Penting untuk hiasan */
+  overflow: hidden;
 }
 
 .hero-content h1 {
   font-size: 4rem;
-  color: #2d3436;
-  margin: 10px 0;
+  color: #d63384;
 }
 
 .btn-hero {
   display: inline-block;
   margin-top: 20px;
   padding: 12px 30px;
-  background: #0984e3;
+  background: #ff8fa3;
   color: #fff;
   border-radius: 25px;
-  transition: 0.3s ease;
+  text-decoration: none;
+  transition: 0.3s;
 }
 
-.btn-hero:hover { background: #74b9ff; transform: translateY(-3px); }
+.btn-hero:hover { background: #ff4d6d; transform: scale(1.05); }
 
 .hero-logo img {
   width: 300px;
@@ -82,35 +73,59 @@ nav ul li a:hover { color: #0984e3; transition: 0.3s; }
   object-fit: cover;
   border-radius: 50%;
   border: 8px solid #fff;
-  box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+  box-shadow: 0 10px 20px rgba(214, 51, 132, 0.2);
 }
 
-/* --- Container & General Section --- */
-.container { padding: 80px 10%; text-align: center; }
-
-h2 {
-  font-size: 2.5rem;
-  margin-bottom: 40px;
-  position: relative;
-}
-
-h2::after {
-  content: '';
-  width: 50px;
-  height: 5px;
-  background: #0984e3;
+/* --- Hiasan Sakura & Beruang (Hanya di Home) --- */
+.sakura-decoration, .bear-decoration {
   position: absolute;
-  bottom: -10px;
-  left: 50%;
-  transform: translateX(-50%);
+  z-index: 1;
+  pointer-events: none; /* Biar tidak bisa diklik */
 }
 
-.bg-light { background-color: #f9f9f9; }
+/* Sakura di pojok kiri atas */
+.sakura-decoration:nth-child(1) {
+  top: 10%;
+  left: 5%;
+  font-size: 3rem;
+  animation: float 3s infinite ease-in-out;
+}
 
-/* --- Proyek Grid --- */
+/* Sakura di pojok kanan atas */
+.sakura-decoration:nth-child(2) {
+  top: 15%;
+  right: 10%;
+  font-size: 2.5rem;
+  animation: float 4s infinite ease-in-out reverse;
+}
+
+/* Beruang di samping Judul */
+.bear-decoration {
+  bottom: 10%;
+  left: 15%;
+  font-size: 4rem;
+  animation: bounce 2s infinite ease-in-out;
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0) rotate(0deg); }
+  50% { transform: translateY(-20px) rotate(20deg); }
+}
+
+@keyframes bounce {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-10px); }
+}
+
+/* --- Section Lainnya --- */
+.container { padding: 80px 10%; text-align: center; }
+h2 { color: #d63384; margin-bottom: 40px; }
+.bg-light { background-color: #fff5f6; }
+
+/* --- Proyek --- */
 .proyek-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
   gap: 20px;
 }
 
@@ -118,51 +133,26 @@ h2::after {
   background: #fff;
   border-radius: 15px;
   overflow: hidden;
-  box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+  box-shadow: 0 4px 10px rgba(0,0,0,0.05);
   transition: 0.3s;
+  text-decoration: none;
+  color: inherit;
+  border: 1px solid #ffe3e8;
 }
 
-.proyek-card:hover { transform: scale(1.05); }
+.proyek-card:hover { transform: translateY(-10px); border-color: #ff8fa3; }
+.proyek-card img { width: 100%; height: 180px; object-fit: cover; }
+.proyek-info { padding: 15px; }
 
-.proyek-card img {
-  width: 100%;
-  height: 200px;
-  object-fit: cover;
-}
-
-.proyek-info { padding: 20px; }
-
-/* --- Media Sosial --- */
-.medsos-list {
-  display: flex;
-  justify-content: center;
-  gap: 30px;
-  flex-wrap: wrap;
-}
-
-.medsos-item {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  transition: 0.3s;
-}
-
-.medsos-item img { width: 50px; margin-bottom: 10px; }
-
-.medsos-item:hover { transform: translateY(-5px); color: #0984e3; }
+/* --- Medsos --- */
+.medsos-list { display: flex; justify-content: center; gap: 30px; }
+.medsos-item { display: flex; flex-direction: column; align-items: center; text-decoration: none; }
+.medsos-item img { width: 45px; margin-bottom: 8px; }
 
 /* --- Footer --- */
 footer {
-  background: #2d3436;
+  background: #ff8fa3;
   color: #fff;
+  padding: 20px;
   text-align: center;
-  padding: 20px 0;
-}
-
-/* --- Responsive (Mobile) --- */
-@media (max-width: 768px) {
-  .hero { flex-direction: column-reverse; text-align: center; padding-top: 50px; }
-  .hero-content h1 { font-size: 2.5rem; }
-  nav ul { display: none; } /* Sembunyikan menu di HP demi kesederhanaan */
-  .hero-logo img { width: 200px; height: 200px; }
 }
